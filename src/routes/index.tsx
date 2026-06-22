@@ -289,9 +289,7 @@ function Index() {
             {/* About */}
             <Win title="About Me">
               <p className="font-[family-name:var(--font-mono)] text-lg leading-snug">
-                Hey, I'm Ruchi — a CS grad and product-focused developer who
-                designs end-to-end and ships fast, especially at the seam of
-                tech, product, and UX.
+                HIi I'm Ruchi! Welcome to my portfolio _
               </p>
               <p className="mt-3 font-[family-name:var(--font-mono)] text-lg leading-snug text-muted-foreground">
                 Currently learning & leveling up my dev workflow with AI tools —
