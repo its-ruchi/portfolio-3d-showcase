@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force-enable the nitro deploy plugin and target Vercel so the build emits the
+  // `.vercel/output` Build Output API directory. Without this, the plugin skips nitro
+  // outside a Lovable sandbox and Vercel has no server output to serve (404).
+  nitro: { preset: "vercel" },
 });

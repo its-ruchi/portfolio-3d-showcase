@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import Lenis from "lenis";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -77,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ruchi Bhilare — Full-Stack Developer & Designer" },
+      { title: "Ruchi Bhilare — AI Native Builder & AI Product Builder" },
       { name: "description", content: "Product-focused developer building and shipping real-world applications using React, Next.js, and AI-assisted workflows." },
       { name: "author", content: "Ruchi Bhilare" },
-      { property: "og:title", content: "Ruchi Bhilare — Full-Stack Developer & Designer" },
+      { property: "og:title", content: "Ruchi Bhilare — AI Native Builder & AI Product Builder" },
       { property: "og:description", content: "Product-focused developer building and shipping real-world applications using React, Next.js, and AI-assisted workflows." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Ruchi Bhilare — Full-Stack Developer & Designer" },
+      { name: "twitter:title", content: "Ruchi Bhilare — AI Native Builder & AI Product Builder" },
       { name: "twitter:description", content: "Product-focused developer building and shipping real-world applications using React, Next.js, and AI-assisted workflows." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/160ae317-b784-4660-b271-52e9c549827d/id-preview-6c9b3310--1bc96306-6503-4ef1-a9b3-ca5d0ca655bc.lovable.app-1781684968284.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/160ae317-b784-4660-b271-52e9c549827d/id-preview-6c9b3310--1bc96306-6503-4ef1-a9b3-ca5d0ca655bc.lovable.app-1781684968284.png" },
@@ -131,6 +132,24 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

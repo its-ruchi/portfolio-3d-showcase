@@ -79,8 +79,21 @@
     -webkit-font-smoothing: none;
     font-smooth: never;
   }
-  html { scroll-behavior: smooth; }
   ::selection { background: var(--color-ink); color: var(--color-paper); }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 /* Pixel window chrome */
