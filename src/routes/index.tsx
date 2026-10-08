@@ -27,6 +27,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Phone,
   ExternalLink,
   Maximize2,
 } from "lucide-react";
@@ -407,7 +408,7 @@ function Index() {
                       Hi! I'm Ruchi 👋
                     </p>
                     <p className="mt-3 font-[family-name:var(--font-mono)] text-lg leading-snug text-muted-foreground">
-                      I'm passionate about AI Product Management and building AI-first products. I've built websites using modern AI development tools, created AI-powered workflows and agents, and I'm continuously learning product strategy, user research, and shipping end-to-end MVPs.
+                      I scope the problem, write the spec, and ship the prototype. Product development at Kaari Labs, business development at Fourfive, and a freelance course platform for Digiculum — plus AI products that stay honest to the user's real voice and experience.
                     </p>
                   </Win>
                 </motion.div>
@@ -417,11 +418,11 @@ function Index() {
                   <Win title="Software List" className="h-full flex flex-col" bodyClassName="flex-1">
                     <ul className="space-y-2 font-[family-name:var(--font-mono)] text-lg leading-tight">
                       {[
-                        ["React / Next.js", 95],
+                        ["React.js / Next.js", 95],
                         ["TypeScript", 90],
-                        ["Tailwind CSS", 95],
-                        ["Supabase", 85],
-                        ["Node.js", 80],
+                        ["Node.js", 85],
+                        ["Supabase / SQL", 85],
+                        ["Python", 70],
                         ["Figma", 90],
                       ].map(([k, v]) => (
                         <li key={k as string} className="flex items-center justify-between gap-3">
@@ -441,8 +442,9 @@ function Index() {
                         "Product Discovery & User Research",
                         "PRDs & Product Strategy",
                         "Product Analytics & A/B Testing",
-                        "AI Prototyping (Claude, Cursor, Lovable)",
-                        "GTM Strategy"
+                        "AI Product Evaluation",
+                        "GTM Strategy",
+                        "n8n Automation",
                       ].map((skill) => (
                         <div
                           key={skill}
@@ -481,7 +483,7 @@ function Index() {
                   img: projectGrowthOs,
                   href: "https://linkedin-growth-os-omega.vercel.app/",
                   blurb:
-                    "AI personal-branding SaaS that captures your voice & generates algorithm-tuned LinkedIn posts. Full onboarding flow + live editor on Groq + Llama 3.",
+                    "Founders know they should post, but generic AI does not sound like them. Onboarding captures their real writing voice first, then Groq + Llama 3 keeps generation fast enough not to break that flow.",
                   stack: ["Next.js 14", "TypeScript", "Groq", "Tailwind"],
                   accent: "bg-paper",
                 },
@@ -491,7 +493,7 @@ function Index() {
                   img: projectMedischedule,
                   href: "https://medischedule-eight.vercel.app/",
                   blurb:
-                    "Care-coordination platform shipped in <7 days with AI-assisted dev. Splits emergency vs normal queues without exposing phone numbers.",
+                    "Clinics had no lightweight way to separate emergency from routine patients without exposing phone numbers. Emergency and normal queues from the first build, then iterated with real clinic staff.",
                   stack: ["Next.js", "Supabase", "TypeScript", "Realtime"],
                   accent: "bg-paper",
                 },
@@ -501,7 +503,7 @@ function Index() {
                   img: projectResumePilot,
                   href: "https://resumecopilot-five.vercel.app/",
                   blurb:
-                    "AI resume-tailoring tool that scores resumes against a job description the way an ATS would, then rewrites bullets to match the posting's language — drawing only on the user's real experience to keep output honest and ATS-safe.",
+                    "Candidates rewrite for every job with no way to know if bullets match an ATS. Scores gaps against the posting, then rewrites using only the candidate's real experience.",
                   stack: ["Next.js", "TypeScript", "AI", "Tailwind"],
                   accent: "bg-paper",
                 },
@@ -581,47 +583,44 @@ function Index() {
                   <div className="space-y-4">
 
                     <div>
-                      <div className="flex justify-between font-[family-name:var(--font-pixel)] text-[9px] uppercase">
-                        <span className="flex items-center gap-1.5">
-                          Product Intern
-                        </span>
-                        <span className="opacity-60">Jun 2026 – Jul 2026</span>
+                      <div className="flex justify-between gap-3 font-[family-name:var(--font-pixel)] text-[9px] uppercase">
+                        <span>Product Development Intern</span>
+                        <span className="opacity-60 shrink-0">May 2026 – Jul 2026</span>
                       </div>
                       <div className="font-[family-name:var(--font-mono)] text-xl">
-                        Kaari Labs · Mumbai
+                        Kaari Labs · Remote
                       </div>
                       <ul className="mt-2 font-[family-name:var(--font-mono)] text-base leading-snug space-y-1">
-                        <li>&gt; Contributed to system design & product architecture for a 3D asset platform</li>
-                        <li>&gt; Documented core product flows as PRD-style specs for tech & non-tech stakeholders</li>
-                        <li>&gt; Built a 3D configurator (Three.js), translating requirements into a working prototype.</li>
+                        <li>&gt; Documented four core product flows — image-to-3D, segmentation, uploads, embeds — as structured PRDs</li>
+                        <li>&gt; Prioritized a working 3D configurator with real models and material controls over extra docs</li>
+                        <li>&gt; Turned ambiguous asset-management requirements into specs that cut design–engineering back-and-forth</li>
                       </ul>
                     </div>
                     <div className="border-t-2 border-ink pt-4">
-                      <div className="flex justify-between font-[family-name:var(--font-pixel)] text-[9px] uppercase">
-                        <span>Full-Stack Dev</span>
-                        <span className="opacity-60">Mar 2026</span>
+                      <div className="flex justify-between gap-3 font-[family-name:var(--font-pixel)] text-[9px] uppercase">
+                        <span>Business Development Intern</span>
+                        <span className="opacity-60 shrink-0">Jun 2026 – Aug 2026</span>
+                      </div>
+                      <div className="font-[family-name:var(--font-mono)] text-xl">
+                        Fourfive · Remote
+                      </div>
+                      <ul className="mt-2 font-[family-name:var(--font-mono)] text-base leading-snug space-y-1">
+                        <li>&gt; Owned outreach and lead-gen for early-stage founders across India and the UAE</li>
+                        <li>&gt; Built the founder’s content strategy and GTM playbook, including a dual-track content plan</li>
+                        <li>&gt; Qualified inbound leads and decided which prospects to escalate</li>
+                      </ul>
+                    </div>
+                    <div className="border-t-2 border-ink pt-4">
+                      <div className="flex justify-between gap-3 font-[family-name:var(--font-pixel)] text-[9px] uppercase">
+                        <span>Freelance Web Developer</span>
+                        <span className="opacity-60 shrink-0">Mar 2026</span>
                       </div>
                       <div className="font-[family-name:var(--font-mono)] text-xl">
                         Digiculum · Client Project
                       </div>
                       <ul className="mt-2 font-[family-name:var(--font-mono)] text-base leading-snug space-y-1">
-                        <li>&gt; Shipped a production course platform w/ quizzes + video lessons</li>
-                        <li>&gt; Architected Next.js + Node + Supabase + payments end-to-end</li>
-                        <li>&gt; Cut hosting cost via unlisted YouTube infra</li>
-                      </ul>
-                    </div>
-                    <div className="border-t-2 border-ink pt-4">
-                      <div className="flex justify-between font-[family-name:var(--font-pixel)] text-[9px] uppercase">
-                        <span>Frontend Intern</span>
-                        <span className="opacity-60">Feb 2025 – Jun 2025</span>
-                      </div>
-                      <div className="font-[family-name:var(--font-mono)] text-xl">
-                        Coding Jr · Remote
-                      </div>
-                      <ul className="mt-2 font-[family-name:var(--font-mono)] text-base leading-snug space-y-1">
-                        <li>&gt; Built responsive UI components for production apps</li>
-                        <li>&gt; Translated UI/UX into scalable front-end systems</li>
-                        <li>&gt; Iterated quality via structured design feedback</li>
+                        <li>&gt; Scoped the build with the client and shipped a production course-selling platform</li>
+                        <li>&gt; Routed video through unlisted YouTube hosting to cut cost without changing playback quality</li>
                       </ul>
                     </div>
                   </div>
@@ -643,10 +642,10 @@ function Index() {
                           B.Sc. Computer Science
                         </div>
                         <div className="font-[family-name:var(--font-pixel)] text-[9px] uppercase mt-1 opacity-70">
-                          BK Birla College · Univ. of Mumbai
+                          BK Birla College, Kalyan · Univ. of Mumbai
                         </div>
                         <div className="font-[family-name:var(--font-pixel)] text-[9px] uppercase mt-1 opacity-70">
-                          2023 — 2026
+                          May 2026
                         </div>
                       </div>
                       <div className="text-center border-2 border-ink p-2 bg-mint shrink-0">
@@ -665,7 +664,7 @@ function Index() {
                       {[
                         {
                           title: "AI Fluency: Framework & Foundations",
-                          issuer: "Anthropic",
+                          issuer: "Anthropic · Skilljar",
                           href: "https://verify.skilljar.com/c/z4zg8aqo2cq7",
                           accent: "bg-mint",
                         },
@@ -675,26 +674,48 @@ function Index() {
                           href: "https://verify.skilljar.com/c/grysd36gn4d4",
                           accent: "bg-coral",
                         },
+                        {
+                          title: "Data Analytics Virtual Internship",
+                          issuer: "Deloitte · Forage",
+                          href: "",
+                          accent: "bg-paper",
+                        },
                       ].map((c) => (
                         <li key={c.title}>
-                          <a
-                            href={c.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`border-2 border-ink ${c.accent} p-3 flex items-start gap-3 hover:translate-x-[2px] hover:translate-y-[2px] transition-transform`}
-                          >
-                            <div className="size-9 border-2 border-ink bg-paper grid place-items-center font-[family-name:var(--font-pixel)] text-[10px] shrink-0">
-                              ★
-                            </div>
-                            <div className="min-w-0">
-                              <div className="font-[family-name:var(--font-mono)] text-base leading-tight">
-                                {c.title}
+                          {c.href ? (
+                            <a
+                              href={c.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`border-2 border-ink ${c.accent} p-3 flex items-start gap-3 hover:translate-x-[2px] hover:translate-y-[2px] transition-transform`}
+                            >
+                              <div className="size-9 border-2 border-ink bg-paper grid place-items-center font-[family-name:var(--font-pixel)] text-[10px] shrink-0">
+                                ★
                               </div>
-                              <div className="font-[family-name:var(--font-pixel)] text-[9px] uppercase opacity-70 mt-1 flex items-center gap-1">
-                                {c.issuer} <ExternalLink size={10} strokeWidth={3} />
+                              <div className="min-w-0">
+                                <div className="font-[family-name:var(--font-mono)] text-base leading-tight">
+                                  {c.title}
+                                </div>
+                                <div className="font-[family-name:var(--font-pixel)] text-[9px] uppercase opacity-70 mt-1 flex items-center gap-1">
+                                  {c.issuer} <ExternalLink size={10} strokeWidth={3} />
+                                </div>
+                              </div>
+                            </a>
+                          ) : (
+                            <div className={`border-2 border-ink ${c.accent} p-3 flex items-start gap-3`}>
+                              <div className="size-9 border-2 border-ink bg-paper grid place-items-center font-[family-name:var(--font-pixel)] text-[10px] shrink-0">
+                                ★
+                              </div>
+                              <div className="min-w-0">
+                                <div className="font-[family-name:var(--font-mono)] text-base leading-tight">
+                                  {c.title}
+                                </div>
+                                <div className="font-[family-name:var(--font-pixel)] text-[9px] uppercase opacity-70 mt-1">
+                                  {c.issuer}
+                                </div>
                               </div>
                             </div>
-                          </a>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -760,10 +781,17 @@ function Index() {
                     <motion.li variants={staggerItem}>
                       <a
                         href="/resume.pdf"
-                        download
+                        download="Ruchi_Bhilare.pdf"
                         className="inline-flex items-center gap-1.5 font-[family-name:var(--font-pixel)] text-[10px] uppercase hover:bg-ink hover:text-paper px-3 py-2 border-2 border-ink bg-mint"
                       >
-                        ↓ Download résumé.pdf
+                        ↓ Download Ruchi_Bhilare.pdf
+                      </a>
+                    </motion.li>
+                    <motion.li variants={staggerItem} className="flex items-center gap-2">
+                      <Phone size={14} strokeWidth={2.5} />
+                      <span className="font-[family-name:var(--font-pixel)] text-[9px] uppercase w-20">Phone</span>
+                      <a className="underline decoration-2 underline-offset-2 hover:bg-mint" href="tel:+917588174844">
+                        +91 7588174844
                       </a>
                     </motion.li>
                     <motion.li variants={staggerItem} className="flex items-center gap-2">
